@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+extern int pop();
+extern void push(int);
+extern void addHeap(int);
+extern void printHeap(int, int);
+extern int heapSize();
+extern int isEmpty();
+extern int heapDelete();
+int main(int argc, char * argv[])
+{
+  int value, shit, i, foo,poop;
+  while (scanf("%d", &value) != EOF) {
+    fprintf(stderr, "READING INPUT: %d\n", value);
+    addHeap(value);
+	}
+	printHeap(0,0);
+	foo= heapSize();
+		for(i=0; i<= foo; i++){
+			shit=heapDelete();
+			printf("%d\n", shit);
+			push(shit);
+		}
+  while(!isEmpty()){
+	poop = pop();
+	printf("%d\n", poop);  
+  }
+  exit(0);
+}
